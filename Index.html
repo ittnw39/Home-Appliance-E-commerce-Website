@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>가전제품 이커머스 홈페이지</title>
+    <link rel="stylesheet" href="Style/StyleSheet.css" />
+    <link rel="stylesheet" href="Style/Banner.css" />
+    <link rel="stylesheet" href="Style/header.css" />
+    <link rel="stylesheet" href="Style/rollingbanner-js.css" />
+    <style></style>
+    <script>
+      var originalID, cloneID;
+      window.addEventListener('DOMContentLoaded', function () {
+        let roller = document.querySelector('.roller');
+        roller.id = 'roller1';
+
+        let clone = roller.cloneNode(true);
+        clone.id = 'roller2';
+        document.querySelector('.wrap').appendChild(clone);
+
+        document.querySelector('#roller1').style.left = '0px';
+        document.querySelector('#roller2').style.left =
+          document.querySelector('.roller ul').offsetWidth + 'px';
+
+        roller.classList.add('original');
+        clone.classList.add('clone');
+
+        let rollerWidth = document.querySelector('.roller ul').offsetWidth;
+        let betweenDistance = 1;
+
+        function startRoller() {
+          originalID = window.setInterval(
+            betweenRollCallback,
+            parseInt(1000 / 100),
+            betweenDistance,
+            document.querySelector('#roller1')
+          );
+          cloneID = window.setInterval(
+            betweenRollCallback,
+            parseInt(1000 / 100),
+            betweenDistance,
+            document.querySelector('#roller2')
+          );
+        }
+
+        function stopRoller() {
+          clearInterval(originalID);
+          clearInterval(cloneID);
+        }
+
+        document.getElementById('roller1').addEventListener('mouseover', () => {
+          stopRoller();
+        });
+        document.getElementById('roller2').addEventListener('mouseover', () => {
+          stopRoller();
+        });
+        document.getElementById('roller1').addEventListener('mouseout', () => {
+          startRoller();
+        });
+        document.getElementById('roller2').addEventListener('mouseout', () => {
+          startRoller();
+        });
+
+        function betweenRollCallback(d, roller) {
+          let left = parseInt(roller.style.left);
+          roller.style.left = left - d + 'px';
+          if (rollerWidth + (left - d) <= 0) {
+            roller.style.left = rollerWidth + 'px';
+          }
+        }
+
+        startRoller();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <header>
+        <h2><a href="Index.html" id="homepage">홈페이지</a></h2>
+        <form action="/search" method="get">
+          <label for="search">상품 검색</label>
+          <div>
+            <input
+              id="search"
+              name="search"
+              type="text"
+              placeholder="상품을 검색해보세요!"
+              required
+              autocomplete="off"
+            />
+            <div class="searchResult"></div>
+          </div>
+          <!-- <input type="submit" value="검색" /> -->
+        </form>
+        <div class="imoge">
+          <a href="Order.html"
+            ><img id="myPageImoge" src="./ImogeFolder/user.png"
+          /></a>
+          <a href="basket.html"
+            ><img id="cartPageImoge" src="./ImogeFolder/shopping-cart.png"
+          /></a>
+        </div>
+      </header>
+      <div class="list">
+        <ul class="category-list">
+          <li><a id="tv" href="">TV</a></li>
+          <li><a id="washer" href="">세탁기</a></li>
+          <li><a id="airconditioner" href="">에어컨</a></li>
+          <li><a id="dryer" href="">건조기</a></li>
+          <li><a id="airCleaner" href="">공기청정기</a></li>
+          <li><a id="refrigerator" href="">냉장고</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="main">
+      <div class="recommend-item">
+        <h2>오늘의 추천 상품</h2>
+      </div>
+      <div class="bannerList1">
+        <div class="banner1">
+          <div class="banner">
+            <div class="img-container active">
+              <a id="link1">
+                <img id="img1" />
+                <p id="name1"></p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link2">
+                <img id="img2" />
+                <p id="name2"></p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link3">
+                <img id="img3" />
+                <p id="name3"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="banner2">
+          <div class="banner">
+            <div class="img-container active">
+              <a id="link1">
+                <img id="img1" />
+                <p id="name1">1</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link2">
+                <img id="img2" />
+                <p id="name2">2</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link3">
+                <img id="img3" />
+                <p id="name3">3</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="banner3">
+          <div class="banner">
+            <div class="img-container active">
+              <a id="link1">
+                <img id="img1" />
+                <p id="name1">1</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link2">
+                <img id="img2" />
+                <p id="name2">2</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link3">
+                <img id="img3" />
+                <p id="name3">3</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bannerList2">
+        <div class="banner4">
+          <div class="banner">
+            <div class="img-container active">
+              <a id="link1">
+                <img id="img1" />
+                <p id="name1"></p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link2">
+                <img id="img2" />
+                <p id="name2"></p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link3">
+                <img id="img3" />
+                <p id="name3"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="banner5">
+          <div class="banner">
+            <div class="img-container active">
+              <a id="link1">
+                <img id="img1" />
+                <p id="name1">1</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link2">
+                <img id="img2" />
+                <p id="name2">2</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link3">
+                <img id="img3" />
+                <p id="name3">3</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="banner6">
+          <div class="banner">
+            <div class="img-container active">
+              <a id="link1">
+                <img id="img1" />
+                <p id="name1">1</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link2">
+                <img id="img2" />
+                <p id="name2">2</p>
+              </a>
+            </div>
+            <div class="img-container">
+              <a id="link3">
+                <img id="img3" />
+                <p id="name3">3</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recommend-item">
+        <div>
+          <h2>장바구니 한 눈에 보기</h2>
+          <a href="basket.html"
+            ><img id="cartPageImoge" src="./ImogeFolder/shopping-cart.png"
+          /></a>
+        </div>
+        <div class="cartItems"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="rollingbanner">
+        <div class="wrap">
+          <div class="roller">
+            <ul>
+              <li class="SAMSUNG">
+                <a href="#">
+                  <strong class="name"></strong>
+                  <img src="./BrandLogo/삼성.png" />
+                </a>
+              </li>
+              <li class="LG">
+                <a href="#">
+                  <img src="./BrandLogo/엘쥐.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="WINIA">
+                <a href="#">
+                  <img src="./BrandLogo/위니아.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="UMAX">
+                <a href="#">
+                  <img src="./BrandLogo/유맥스.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="CARRIER">
+                <a href="#">
+                  <img src="./BrandLogo/캐리어.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="TCL">
+                <a href="#">
+                  <img src="./BrandLogo/티씨엘.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="BLUE-AIR">
+                <a href="#">
+                  <img src="./BrandLogo/블루에어.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="HAIER">
+                <a href="#">
+                  <img src="./BrandLogo/하이어.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="SK-MAGIC">
+                <a href="#">
+                  <img src="./BrandLogo/sk.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="EURKRW">
+                <a href="#">
+                  <img src="./BrandLogo/유테크.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="SAMSUNG">
+                <a href="#">
+                  <strong class="name"></strong>
+                  <img src="./BrandLogo/삼성.png" />
+                </a>
+              </li>
+              <li class="LG">
+                <a href="#">
+                  <img src="./BrandLogo/엘쥐.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="WINIA">
+                <a href="#">
+                  <img src="./BrandLogo/위니아.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="UMAX">
+                <a href="#">
+                  <img src="./BrandLogo/유맥스.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="CARRIER">
+                <a href="#">
+                  <img src="./BrandLogo/캐리어.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="TCL">
+                <a href="#">
+                  <img src="./BrandLogo/티씨엘.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="BLUE-AIR">
+                <a href="#">
+                  <img src="./BrandLogo/블루에어.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="HAIER">
+                <a href="#">
+                  <img src="./BrandLogo/하이어.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="SK-MAGIC">
+                <a href="#">
+                  <img src="./BrandLogo/sk.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+              <li class="EURKRW">
+                <a href="#">
+                  <img src="./BrandLogo/유테크.png" />
+                  <strong class="name"></strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footerContainer">
+      <footer>
+        <p id="footer">가전 제품 이커머스 홈 페이지</p>
+      </footer>
+    </div>
+
+    <script src="JS/categoryLink.js" type="module"></script>
+    <script src="JS/header.js" type="module"></script>
+    <script src="JS/banner.js" type="module"></script>
+    <script src="JS/HomepageCart.js" type="module"></script>
+  </body>
+</html>

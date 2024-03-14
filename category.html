@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="Style/header.css" />
+    <link href="Style/CategotyStyleSheet.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h2><a href="Index.html" id="homepage">홈페이지</a></h2>
+        <form action="/search" method="get">
+          <label for="search">상품 검색</label>
+          <div>
+            <input
+              id="search"
+              name="search"
+              type="text"
+              placeholder="상품을 검색해보세요!"
+              required
+              autocomplete="off"
+            />
+            <div class="searchResult"></div>
+          </div>
+          <!-- <input type="submit" value="검색" /> -->
+        </form>
+        <div class="imoge">
+          <a href="Order.html"
+            ><img id="myPageImoge" src="./ImogeFolder/user.png"
+          /></a>
+          <a href="basket.html"
+            ><img id="cartPageImoge" src="./ImogeFolder/shopping-cart.png"
+          /></a>
+        </div>
+      </header>
+      <div class="list">
+        <ul class="category-list">
+          <li><a id="tv" href="">TV</a></li>
+          <li><a id="washer" href="">세탁기</a></li>
+          <li><a id="airconditioner" href="">에어컨</a></li>
+          <li><a id="dryer" href="">건조기</a></li>
+          <li><a id="airCleaner" href="">공기청정기</a></li>
+          <li><a id="refrigerator" href="">냉장고</a></li>
+        </ul>
+      </div>
+      <div id="categoryHeader">
+        <!-- js로 html tag 조작 -->
+      </div>
+      <div id="totalCount">
+        <!-- js로 html tag 조작 --><input
+          type="button"
+          value="오름차순"
+          class="sortBtn"
+        />&nbsp;<input
+          type="button"
+          value="내림차순"
+          class="sortBtn"
+        />&nbsp;<input
+          type="button"
+          value="높은 가격 순"
+          class="sortBtn"
+        />&nbsp;
+        <input type="button" value="낮은 가격 순" class="sortBtn" />
+      </div>
+      <div id="sortBar">
+        <!-- <form action="/filter" method="get"> -->
+        <input
+          type="number"
+          id="startPrice"
+          name="startPrice"
+          placeholder="0"
+        />원&nbsp;~&nbsp;<input
+          type="number"
+          id="endPrice"
+          name="endPrice"
+          placeholder="0"
+        />원<input class="sortBtn" type="submit" value="검색" />
+        <!-- </form> -->
+        &nbsp;<span>브랜드별&nbsp;|&nbsp;</span>
+      </div>
+    </div>
+
+    <div id="wrapper">
+      <main id="productsList">
+        <!-- js로 html tag 조작 -->
+      </main>
+    </div>
+
+    <script src="./JS/categoryLink.js" type="module"></script>
+    <script src="JS/header.js" type="module"></script>
+    <script type="module" src="./JS/loader.js"></script>
+  </body>
+</html>

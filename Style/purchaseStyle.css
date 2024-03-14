@@ -1,0 +1,90 @@
+.container,
+.productCheck{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#margin1{
+    margin-top: 100px;
+}
+.left{
+    width: 70%;
+}
+.right{
+    width: 25%;
+}
+.basketProduct{
+    display: inline-block;
+    width: 100%;
+}
+.product{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.item-image{
+    width: 200px;
+}
+.productInfo{
+    display: fixed;
+    align-items: center;
+}
+
+.productPrice{
+    margin-top: 5%;
+    align-items: center;
+    float: right;
+}
+.productPrice .quantity{
+    float: right;
+}
+.basketTop,
+.deliveryInfoTop{
+    border-bottom: 3px solid black;
+}
+.deliveryInfo{
+    margin-top: 10%;
+}
+.basketProduct,
+.userInfo{
+    border-bottom: 2px solid lightgray;
+}
+.userInfo{
+    width: 100%;
+}
+table{
+    border-spacing: 50px;
+}
+table td{
+    margin-left: 50px;
+}
+.userInfo{
+    float: left;
+}
+.userdiv{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.userInput{
+    margin: 0 auto;
+    padding: 5px;
+    width: 250px;
+}
+#box{
+    border-top: 3px solid black;
+    border-bottom: 2px solid lightgray;
+}
+#box2{
+    border-bottom: 2px solid lightslategray;
+}
+.purchaseBox{
+    top: 0%;
+}
+.purchaseBtn{
+    margin-top: 10px;
+    text-align: center;
+}
+#hidden {
+    color: white;
+}

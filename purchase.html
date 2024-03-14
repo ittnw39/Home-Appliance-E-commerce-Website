@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매페이지</title>
+
+    <script src="JS/purchase.js" type="module"></script>
+
+    <link rel="stylesheet" href="Style/header.css"/>
+    <link rel="stylesheet" href="Style/purchaseStyle.css" />
+</head>
+<body>
+    <div class="header">
+        <header>
+          <h2><a href="Index.html" id="homepage">홈페이지</a></h2>
+          <form action="/search" method="get">
+            <label for="search">상품 검색</label>
+            <div>
+              <input
+                id="search"
+                name="search"
+                type="text"
+                placeholder="상품을 검색해보세요!"
+                required
+                autocomplete="off"
+              />
+              <div class="searchResult"></div>
+            </div>
+            <!-- <input type="submit" value="검색" /> -->
+          </form>
+          <div class="imoge">
+            <a href="Order.html"
+              ><img id="myPageImoge" src="./ImogeFolder/user.png"
+            /></a>
+            <a href="basket.html"
+              ><img id="cartPageImoge" src="./ImogeFolder/shopping-cart.png"
+            /></a>
+          </div>
+        </header>
+        <div class="list">
+          <ul class="category-list">
+            <li><a id="tv" href="">TV</a></li>
+            <li><a id="washer" href="">세탁기</a></li>
+            <li><a id="airconditioner" href="">에어컨</a></li>
+            <li><a id="dryer" href="">건조기</a></li>
+            <li><a id="airCleaner" href="">공기청정기</a></li>
+            <li><a id="refrigerator" href="">냉장고</a></li>
+          </ul>
+        </div>
+      </div>
+  
+
+    <div class="container" id="margin1">
+        <div class="left">
+            <div class="row">
+                <div class="basketTop">
+                    <h3> 주문상품 </h3>   
+                </div>
+                <div id="products-container"></div>
+            </div>
+
+            <div class="deliveryInfo">
+                <div class="deliveryInfoTop">
+                    <h3> 배송 정보 </h3>   
+                </div>
+
+                <div class="userInfo">
+                    <table>
+                        <tr>
+                            <td>주문자 정보 </td>
+                            <td> 이름 </td>
+                            <td><input type="text" class="userInput" placeholder="이름을 입력해 주세요."></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> 휴대폰 </td>
+                            <td><input type="text" class="userInput" placeholder="숫자만 입력 가능합니다.('-'제외)"></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> 이메일 </td>
+                            <td><input type="text" class="userInput" placeholder="이메일을 입력해 주세요."></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="userInfo">
+                    <table>
+                        <tr>
+                            <td> 배송지 정보 </td>
+                            <td> 수령인 이름 </td>
+                            <td><input type="text" class="userInput" placeholder="이름을 입력해 주세요."></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> 연락처 </td>
+                            <td><input type="text" class="userInput" placeholder="숫자만 입력 가능합니다.('-'제외)"></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> 주소 </td>
+                            <td><input type="text" class="userInput" placeholder="우편번호를 입력해 주세요."></td>
+                            
+                            <tr>
+                                <td> </td> <td> </td>    
+                                <td><input type="text" class="userInput" placeholder="도/시/행정구역을 입력해 주세요."></td>  
+                            </tr>
+                            <tr>
+                                <td> </td> <td> </td>    
+                                <td><input type="text" class="userInput" placeholder="상세주소를 입력해 주세요."></td>  
+                            </tr>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    
+        <div class="right">
+            <div class="purchaseBox">
+                <h3> 결제정보 </h3>
+                <div class="container" id="box">
+                    <div class="leftD">
+                        <p> 상품 수</p>
+                        <p> 주문 금액 </p>
+                        <p> 할인 금액 </p>
+                    </div>
+                    <div class="rightD">
+                        <p id="totalProductsCount">  </p>
+                        <p class="totalOrderAmount">  </p>
+                        <p> 0원 </p>
+                    </div>
+                </div>
+                <div class="container" id="box2">
+
+                    <h4> 결제 예정 금액</h4>
+                    <h4 id="hidden"> oooooooo </h4>
+                    <p class="totalOrderAmount">  </p>
+                </div>
+                <div class="purchaseBtn">
+                     <button type="submit" onclick="validateForm()"> 결제하기 </a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/categoryLink.js" type="module"></script>
+    <script src="JS/header.js" type="module"></script>
+</body>
+</html>

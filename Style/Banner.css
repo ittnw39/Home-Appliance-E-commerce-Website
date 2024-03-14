@@ -1,0 +1,60 @@
+.searchResult {
+  position: absolute;
+  z-index: 10;
+}
+body {
+  position: relative;
+  z-index: 10;
+}
+.banner {
+  z-index: 3;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.bannerList1,
+.bannerList2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.banner .img-container {
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner .img-container.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.img-container img {
+  width: 350px;
+  height: 350px;
+}
+
+/* .img-container p {
+  position: relative;
+  z-index: 1;
+} */
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-container img {
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+}

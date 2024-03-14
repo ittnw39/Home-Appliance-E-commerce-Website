@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"name": "WebProject",
+		"path": "../.."
+	},
+	{
+		"name": "[안전폴더]WEB_Basket",
+		"path": "../../../../문서/카카오톡 받은 파일/[안전폴더]WEB_Basket"
+	}
+],
+  "settings": {
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.multiRootWorkspaceName": "WebProject"
+  }
+}

@@ -1,0 +1,73 @@
+.container,
+.productCheck,
+.basketTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#margin1{
+    margin-top: 100px;
+}
+.left{
+    width: 70%;
+}
+.right{
+    width: 25%;
+}
+.basketProduct{
+    display: inline-block;
+    width: 100%;
+}
+.product{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.item-image{
+    width: 200px;
+}
+.productInfo{
+    display: fixed;
+    align-items: center;
+}
+.quantityButton{
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.productPrice{
+    float: right;
+}
+.basketTop{
+    border-bottom: 5px solid black;
+}
+.basketProduct{
+    border-bottom: 2px solid lightgray;
+}
+
+#box{
+    border-top: 3px solid black;
+    border-bottom: 2px solid lightgray;
+}
+.purchaseBtn{
+    text-align: center;
+}
+#hidden {
+    color: white;
+}
+.purchaseBox{
+    margin-right: 10px;
+}
+
+.NonBasket {
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+  }
+  
+  .NonBasket img {
+    width: 20px;
+    
+    margin-left: 35%;
+    margin-right: 10px;
+  }

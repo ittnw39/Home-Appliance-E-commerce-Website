@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상세페이지</title>
+  <link rel="stylesheet" type="text/css" href="Style/header.css">
+  <link rel="stylesheet" type="text/css" href="Style/style.css">
+  <link rel="stylesheet" href="Style/scrollButton.css">
+
+</head>
+
+<body>
+  <script src="JS/product_quantity.js"></script>
+  <script src="JS/categoryLink.js" type="module"></script>
+  <script src="Object/Object.js" type="module"></script>
+  <script src="JS/addToCart.js" type="module"></script>
+
+  <div class="header">
+    <header>
+      <h2><a href="Index.html" id="homepage">홈페이지</a></h2>
+      <form action="/search" method="get">
+        <label for="search">상품 검색</label>
+        <div>
+          <input
+            id="search"
+            name="search"
+            type="text"
+            placeholder="상품을 검색해보세요!"
+            required
+            autocomplete="off"
+          />
+          <div class="searchResult"></div>
+        </div>
+        <!-- <input type="submit" value="검색" /> -->
+      </form>
+      <div class="imoge">
+        <a href="Order.html"
+          ><img id="myPageImoge" src="./ImogeFolder/user.png"
+        /></a>
+        <a href="basket.html"
+          ><img id="cartPageImoge" src="./ImogeFolder/shopping-cart.png"
+        /></a>
+      </div>
+    </header>
+    <div class="list">
+      <ul class="category-list">
+        <li><a id="tv" href="">TV</a></li>
+        <li><a id="washer" href="">세탁기</a></li>
+        <li><a id="airconditioner" href="">에어컨</a></li>
+        <li><a id="dryer" href="">건조기</a></li>
+        <li><a id="airCleaner" href="">공기청정기</a></li>
+        <li><a id="refrigerator" href="">냉장고</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" id="top1">
+    <div class="productBrand">
+      <a href="#">
+        <h2>브랜드명</h2>
+      </a>
+    </div>
+    <!-- 상품 정보 -->
+    <div class="product">
+      <div class="productImageTop">
+
+        <img class="mainImage" src="product.jpg" alt="상품 이미지">
+
+      </div>
+
+      <div class="productInfo">
+        <h1 class="productName">상품 이름</h1>
+        <p class="productEnergy">1등급</p>
+        <p class="productColor">색상</p>
+        <p class="productPrice">10,000원</p>
+        <form class="productForm">
+          <label for="quantity1">수량:</label>
+          <div class="quantity-input">
+            <button class="quantity-button" data-action="decrease">-</button>
+            <input type="number" id="quantity1" name="quantity" min="1" max="10" value="1">
+            <button class="quantity-button" data-action="increase">+</button>
+          </div>
+          <button type="submit" class="btn-add-to-cart">장바구니</button>
+          <button type="submit" class="btn-buy-now">구매하기</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <table class="product-details">
+      <!-- 상품 상세 정보 표 -->
+      <tr>
+        <th>상품 상세</th>
+      </tr>
+      <tr>
+        <td>브랜드</td>
+        <td class="productBrand">ex)삼성</td>
+        <td>상품명</td>
+        <td class="productName2">ex)삼성전자 FHD LED TV</td>
+      </tr>
+      <tr>
+        <td>크기</td>
+        <td class="productSize">ex)43인치</td>
+        <td>에너지 등급</td>
+        <td class="productEnergy">ex)5등급</td>
+      </tr>
+      <tr>
+        <td>색상</td>
+        <td class="productColor">ex)black</td>
+      </tr>
+    </table>
+    <div class="productImageBottom">
+      <img src="product.jpg" alt="상품 이미지">
+    </div>
+  </div>
+
+  <!-- 상품 상세 정보와 연관 상품 -->
+  <div class="container">
+    <div id="related-products">
+      <h3>추천상품</h3>
+      <div id="slideShow">
+        <ul id="related-product-list" class="slides">
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명1</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명2</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명3</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명4</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명5</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명6</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명7</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명8</p>
+            <p class="productPrice">가격</p>
+          </li>
+          <li><img src="product.jpg" alt="">
+            <p class="productName">상품명9</p>
+            <p class="productPrice">가격</p>
+          </li>
+        </ul>
+
+
+        <p class="controller">
+          <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 -->
+          <span class="prev">&lang;</span>
+          <span class="next">&rang;</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="JS/slideShow.js"></script>
+  
+  <button class="scroll-button top-button" onclick="scrollToTop()">▲</button>
+  <button class="scroll-button" onclick="scrollToBottom()">▼</button>
+  <script src="JS/scrollButton.js"></script>
+  <script type="module">
+    import { findObject, findCategoryProducts, choiceNum } from './Object/Object.js';
+
+    // 상품 정보에 적용
+    const displayProductInfo = (product) => {
+      document.querySelector('.productBrand').innerText = product.brand;
+      document.querySelector('.productImageTop img').src = product.mainImage[0];
+      document.querySelector('.productImageBottom img').src = product.subImage[0];
+      document.querySelector('.productName').innerText = product.name;
+      document.querySelector('.productEnergy').innerText = product.energy;
+      document.querySelector('.productColor').innerText = product.color;
+      document.querySelector('.productPrice').innerText = product.price;
+
+      //상세 정보 표에 적용
+      document.querySelector('.product-details .productBrand').innerText = product.brand;
+      document.querySelector('.product-details .productName2').innerText = product.name;
+      document.querySelector('.product-details .productSize').innerText = product.size;
+      document.querySelector('.product-details .productEnergy').innerText = product.energy;
+      document.querySelector('.product-details .productColor').innerText = product.color;
+
+    };
+    const displayRelatedProducts = async (category, id) => {
+      const relatedProductList = document.getElementById('related-product-list');
+      relatedProductList.innerHTML = '';
+
+      const categoryProducts = await findCategoryProducts(category);
+      const relatedProducts = await choiceNum(9, categoryProducts);
+
+      relatedProducts.forEach((product) => {
+        if (product.id !== id) {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        const name = document.createElement('p');
+        const price = document.createElement('p');
+
+        img.src = product.mainImage[0];
+        name.innerText = product.name;
+        price.innerText = product.price + "원";
+
+        li.appendChild(img);
+        li.appendChild(name);
+        li.appendChild(price);
+
+        relatedProductList.appendChild(li);
+        }
+      });
+    };
+
+//카테고리와 상품 아이디로 상품 정보 불러오기
+
+    // let currentURL = new URL(window.location.href);
+    const params = new URLSearchParams(window.location.search);
+    let id = params.get('id');
+    let category = params.get('category');
+
+
+    const product = findObject(category, Number(id));
+    displayProductInfo(product);
+    displayRelatedProducts(category, Number(id));
+  </script>
+
+  <!-- <script src="./JS/keyValue.js" type="module"></script> -->
+
+  <script src="JS/addToCart.js" type="module"></script>
+  <script src="JS/categoryLink.js" type="module"></script>
+  <script src="JS/header.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+#top1 {
+  margin-top: 120px;
+}
+
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  border: 3px solid rgb(192, 192, 192);
+}
+
+.container a {
+  width: auto;
+  color: navy;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.container .productBrand {
+  padding: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search input[type='text'] {
+  width: 500px;
+  height: 30px;
+  border: 3px solid black;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search button {
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+}
+
+.productForm button {
+  margin-top: 10px;
+}
+
+.category {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.category a {
+  margin: 10px auto;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0px 30px;
+}
+
+.category .td1 {
+  margin: 0 auto;
+  padding: 5px;
+  border-right: 1px solid #ccc;
+}
+
+.category a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.productBrand {
+  margin-left: 30px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  margin-top: 0px;
+}
+
+.productImageTop {
+  flex-shrink: 0;
+  /* 이미지가 너무 크면 축소 */
+  margin-right: 10px;
+  /* 이미지와 정보 사이의 간격 */
+}
+
+.productImageBottom {
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.productImageBottom img {
+  width: 500px;
+}
+
+.productInfo {
+  width: 300px;
+  margin-left: 100px;
+  padding: 20px;
+}
+
+.productName {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.productPrice {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.productColor {
+  margin-bottom: 10px;
+}
+
+.productEnergy {
+  margin-bottom: 10px;
+}
+
+.product-details {
+  margin: 50px auto;
+  border-collapse: collapse;
+  padding: 20px;
+}
+
+.product-details td {
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.related-products {
+  display: flex;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* 보여줄 구간의 높이와 넓이 설정 */
+#slideShow {
+  width: 1000px;
+  height: 200px;
+  position: relative;
+  margin: 10px auto;
+  overflow: hidden;
+  /*리스트 형식으로 이미지를 일렬로 
+    정렬할 것이기 때문에, 500px 밖으로 튀어 나간 이미지들은
+    hidden으로 숨겨줘야됨*/
+}
+
+.slides img {
+  width: 100px;
+  height: auto;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc((100% + 10px) * 6);
+  /* 슬라이드할 사진과 마진 총 넓이 */
+  transition: left 0.5s ease-out;
+  /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+}
+
+/* 첫 번째 슬라이드 가운데에 정렬하기위해
+  첫번째 슬라이드만 margin-left조정 */
+.slides li:first-child {
+  margin-left: 0px;
+}
+
+/* 슬라이드들 옆으로 정렬 */
+.slides li:not(:last-child) {
+  float: left;
+  margin-right: 100px;
+}
+
+.slides li {
+  float: left;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.controller span {
+  position: absolute;
+  background-color: rgba(155, 155, 155, 0.618);
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+/* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+.controller span:hover {
+  background-color: rgba(17, 17, 17, 0.11);
+}
+
+.prev {
+  left: 10px;
+}
+
+/* 이전 화살표에 마우스 커서가 올라가 있을때 
+  이전 화살표가 살짝 왼쪽으로 이동하는 효과*/
+.prev:hover {
+  transform: translateX(-10px);
+}
+
+.next {
+  right: 10px;
+}
+
+/* 다음 화살표에 마우스 커서가 올라가 있을때 
+  이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
+.next:hover {
+  transform: translateX(10px);
+}
+.mainImage {
+  width: 300px;
+  height: 300px;
+}

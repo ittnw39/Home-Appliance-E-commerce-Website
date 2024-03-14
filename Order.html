@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주문 목록</title>
+    <link rel="stylesheet" href="Style/StyleSheet.css" />
+    <link rel="stylesheet" href="Style/OrderSheet.css" />
+    <link rel="stylesheet" href="Style/MypageTable.css" />
+  </head>
+
+  <body>
+    <div class="mypage-container">
+      <table class="page-table">
+        <tr>
+          <th rowspan="2" class="word-cell">
+            <div class="myPage">
+              MY PAGE
+              <img src="./ImogeFolder/user.png" />
+            </div>
+            <div>
+              <a class="homeButton" href="Index.html">
+                <p>HOME</p>
+                <img src="./ImogeFolder/home.png" />
+              </a>
+            </div>
+          </th>
+          <th class="state-cell">입금대기</th>
+          <th class="state-cell">배송준비</th>
+          <th class="state-cell">배송중</th>
+          <th class="state-cell">배송완료</th>
+        </tr>
+        <tr>
+          <td id="pendingCount" class="state-cell">0</td>
+          <td id="completedCount" class="state-cell">0</td>
+          <td id="shippingCount" class="state-cell">0</td>
+          <td id="deliveredCount" class="state-cell">0</td>
+        </tr>
+        <tr class="product-row">
+          <td class="link-cell">
+            <div class="link-div">
+              <br /><a href="Order.html" class="current-link">주문 내역</a
+              ><br />
+              <br /><a href="Cancel.html" class="other-link">취소 내역</a><br />
+              <br /><a href="RecentShop.html" class="other-link"
+                >장바구니 상품</a
+              ><br />
+              <br />
+            </div>
+          </td>
+          <td colspan="4" class="product-record">
+            <h2>주문 목록</h2>
+            <div id="orderDetails" class="product-details"></div>
+          </td>
+        </tr>
+      </table>
+
+      <script type="module" src="JS/Order.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const button = document.querySelector('.homeButton');
+          button.addEventListener('mouseover', function () {
+            document.querySelector('.myPage').style.color = 'black';
+          });
+          button.addEventListener('mouseout', function () {
+            document.querySelector('.myPage').style.color = 'blue';
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

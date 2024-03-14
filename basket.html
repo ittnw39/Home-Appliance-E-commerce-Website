@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+
+    <script src="JS/basket.js" type="module"></script>
+    
+    <link rel="stylesheet" href="Style/header.css"/>
+    <link rel="stylesheet" href="Style/basketStyle.css"/>
+</head>
+<body>
+  <div class="header">
+    <header>
+      <h2><a href="Index.html" id="homepage">홈페이지</a></h2>
+      <form action="/search" method="get">
+        <label for="search">상품 검색</label>
+        <div>
+          <input
+            id="search"
+            name="search"
+            type="text"
+            placeholder="상품을 검색해보세요!"
+            required
+            autocomplete="off"
+          />
+          <div class="searchResult"></div>
+        </div>
+        <!-- <input type="submit" value="검색" /> -->
+      </form>
+      <div class="imoge">
+        <a href="Order.html"
+          ><img id="myPageImoge" src="./ImogeFolder/user.png"
+        /></a>
+        <a href="basket.html"
+          ><img id="cartPageImoge" src="./ImogeFolder/shopping-cart.png"
+        /></a>
+      </div>
+    </header>
+    <div class="list">
+      <ul class="category-list">
+        <li><a id="tv" href="">TV</a></li>
+        <li><a id="washer" href="">세탁기</a></li>
+        <li><a id="airconditioner" href="">에어컨</a></li>
+        <li><a id="dryer" href="">건조기</a></li>
+        <li><a id="airCleaner" href="">공기청정기</a></li>
+        <li><a id="refrigerator" href="">냉장고</a></li>
+      </ul>
+    </div>
+  </div>
+
+  
+
+    <div class="container" id="margin1">
+        <div class="left">
+            <div class="basketTop">
+                <div> 
+                    <input type='checkbox' id='checkAll' onclick="allCheckBoxes('check[]', this.checked)"> <b>전체 선택</b> 
+                </div>
+                <input type="button" value="선택 삭제" class="deleteSelectBtn" onclick="removeProduct()"></button>
+            </div>
+            <div id="products-container"></div>
+        </div>
+
+        <div class="right">
+            <div class="purchaseBox" >
+                <div class="container" id="box">
+                    <div class="leftD">
+                        <p> 전체 상품</p>
+                        <p> 주문 금액 </p>
+                        <p> 할인 금액 </p>
+                    </div>
+                    <div class="rightD">
+                        <p id="totalProductsCount">  </p>
+                        <p class="totalOrderAmount">  </p>
+                        <p> 0원 </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <h4> 결제 예정 금액</h4>
+                    <h4 id="hidden"> oooooooo </h4>
+                    <h4 class="totalOrderAmount"> </h4>
+                </div>
+                <div class="purchaseBtn">
+                    <input type="button" value="주문하기" id="goPurchasePage" onclick="go()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/categoryLink.js" type="module"></script>
+    <script src="JS/header.js" type="module"></script>
+    </body>
+    </html>
